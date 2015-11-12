@@ -37,7 +37,7 @@ namespace BillViewer.Core.Queries.Handlers
             {
                 Package = package?.Name,
                 BuyAndKeep = bill.SkyStore.BuyAndKeep,
-                Rentals = bill.SkyStore.BuyAndKeep,
+                Rentals = bill.SkyStore.Rentals,
                 Total = total
             };
 

@@ -9,29 +9,43 @@
         <div class="mdl-card__title">
             <h2 class="mdl-card__title-text">Your Sky Statement</h2>
         </div>
-        <div class="mdl-card__supporting-text">
-            Total cost for this statement is @Model.Total.ToString("C")<br/>
-            Payment for this statement is due on @Model.PaymentDate.ToLongDateString()
+        <div class="mdl-card__supporting-text mdl-grid mdl-cell--12-col">
+
+            <div class="mdl-cell mdl-cell--9-col">
+                Payment for this statement is due on @Model.PaymentDate.ToLongDateString()
+            </div>
+            <div class="mdl-cell mdl-cell--3-col">
+                <h1>@Model.Total.ToString("C")</h1>
+            </div>
+
         </div>
     </div>
 
-    <div class="mdl-cell mdl-cell--12-col mdl-grid">
+    <div class="mdl-card mdl-cell mdl-cell--12-col mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col mdl-grid">
+            <h5>Your Sky Packages</h5>
+        </div>
         <!-- Square card -->
-        @foreach (var package in Model.Packages)
-        {
-            <div class="mdl-card  mdl-cell mdl-cell--4-col  mdl-shadow--2dp">
-                <div class="mdl-card__title mdl-card--expand">
-                    <h2 class="mdl-card__title-text">@package.Name</h2>
+        <div class="mdl-cell mdl-cell--12-col mdl-grid">
+            @foreach (var package in Model.Packages)
+            {
+                <div class="mdl-card mdl-color--grey-300  mdl-cell mdl-cell--4-col  mdl-shadow--4dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">@package.Name</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <h3> @package.TotalCost.ToString("C")</h3>
+                    </div>
+                    <div class="mdl-card__media">
+                        
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">
+                            Package Details
+                        </a>
+                    </div>
                 </div>
-                <div class="mdl-card__supporting-text">
-                    @package.Cost.ToString("C")
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                        Package Details
-                    </a>
-                </div>
+            }
             </div>
-        }
-    </div>
+        </div>
 </div>

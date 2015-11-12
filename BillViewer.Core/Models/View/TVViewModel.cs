@@ -10,7 +10,7 @@ namespace BillViewer.Core.Models.View
 
         public List<BuyAndKeep> BuyAndKeep { get; set; }
 
-        public List<BuyAndKeep> Rentals { get; set; }
+        public List<Rental> Rentals { get; set; }
 
         public decimal Total { get; set; }
     }

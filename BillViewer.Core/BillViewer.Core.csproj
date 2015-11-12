@@ -69,7 +69,7 @@
     <Compile Include="Models\View\BroadbandViewModel.cs" />
     <Compile Include="Models\View\OverviewViewModel.cs" />
     <Compile Include="Models\View\PhoneViewModel.cs" />
-    <Compile Include="Models\View\SubscriptionView.cs" />
+    <Compile Include="Models\View\SubscriptionViewModel.cs" />
     <Compile Include="Models\View\TVViewModel.cs" />
     <Compile Include="PackageType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

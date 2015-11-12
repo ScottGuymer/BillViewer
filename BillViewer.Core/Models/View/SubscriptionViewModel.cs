@@ -1,6 +1,6 @@
 ﻿namespace BillViewer.Core.Models.View
 {
-    public class SubscriptionView
+    public class SubscriptionViewModel
     {
         public string Name { get; set; }
 
@@ -9,5 +9,7 @@
         public decimal Cost { get; set; }
 
         public decimal ExtraCosts { get; set; }
+
+        public decimal TotalCost { get; set; }
     }
 }

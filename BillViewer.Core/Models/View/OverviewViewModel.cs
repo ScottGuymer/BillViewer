@@ -9,7 +9,7 @@ namespace BillViewer.Core.Models.View
     {
         public DateTime PaymentDate { get; set; }
 
-        public IEnumerable<Subscription> Packages { get; set; }
+        public IEnumerable<SubscriptionViewModel> Packages { get; set; }
 
         public decimal Total { get; set; }
     }

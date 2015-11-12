@@ -9,9 +9,16 @@
         <div class="mdl-card__title">
             <h2 class="mdl-card__title-text">@Model.Package</h2>
         </div>
+        
+        <div class="mdl-card__supporting-text mdl-grid mdl-cell--12-col">
 
-        <div class="mdl-card__supporting-text">
-            This cost you a total of @Model.Total.ToString("C") this month including all call charges
+            <div class="mdl-cell mdl-cell--9-col">
+                This is your current Sky Talk package.
+            </div>
+            <div class="mdl-cell mdl-cell--3-col">
+                <h1>@Model.Total.ToString("C")</h1>
+            </div>
+
         </div>
         <div class="mdl-card__actions">
             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
@@ -42,8 +49,6 @@
                             <td>@call.Cost.ToString("C")</td>
                         </tr>
                     }
-
-
                 </tbody>
             </table>
         </div>

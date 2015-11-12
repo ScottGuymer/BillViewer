@@ -27,28 +27,29 @@
         }
 
         [Test]
-        public void Should_return_bill()
+        public async void Should_return_bill()
         {
-            this.httpTest.RespondWithJson(new Bill());
+            this.httpTest.RespondWithJson(new Bill() {Total = 100});
 
-            var query = new BillQueryHandler().Execute(new BillQuery());
-
-            query.Wait();
-
-            var bill = query.Result;
+            var bill = await new BillQueryHandler().Execute(new BillQuery());       
 
             bill.ShouldNotEqual(null);
+            bill.Total.ShouldEqual(100M);
         }
 
         [Test, ExpectedException]
-        public void Should_not_return_bill()
+        public async void Should_not_return_bill()
         {
+            // for the moment we expect it to throw but we should add some error handling
             this.httpTest.RespondWith(500, "no bill");
-            var query = new BillQueryHandler().Execute(new BillQuery());
+            await new BillQueryHandler().Execute(new BillQuery());
+        }
 
-            query.Wait();
-
-            var bill = query.Result;
+        [Test]
+        public async void Should_handle_wrong_json()
+        {
+            this.httpTest.RespondWithJson(new { nottherightjason = "jason" });
+            var bill = await new BillQueryHandler().Execute(new BillQuery());
 
             bill.ShouldNotEqual(null);
         }

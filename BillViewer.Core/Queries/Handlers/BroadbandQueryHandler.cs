@@ -1,13 +1,37 @@
 namespace BillViewer.Core.Queries.Handlers
 {
-	using System;
-	using System.Threading.Tasks;
+    using System.Threading.Tasks;
 
-    public class BroadbandQueryHandler : IQueryHandlerAsync<BillQuery, BroadbandQueryHandler>
+    using BillViewer.Core.Models.Bill;
+    using BillViewer.Core.Models.View;
+
+    public class BroadbandQueryHandler : IQueryHandlerAsync<BillQuery, BroadbandViewModel>
     {
-        Task<BroadbandQueryHandler> IQueryHandlerAsync<BillQuery, BroadbandQueryHandler>.Execute(BillQuery query)
+        private readonly IQueryHandlerAsync<BillQuery, Bill> queryHandler;
+
+        public BroadbandQueryHandler(IQueryHandlerAsync<BillQuery, Bill> queryHandler)
         {
-            throw new NotImplementedException();
+            this.queryHandler = queryHandler;
+        }
+
+        public async Task<BroadbandViewModel> Execute(BillQuery query)
+        {
+            var bill = await queryHandler.Execute(query);
+
+            var package = bill?.PackageName(PackageType.broadband);
+
+            if (package?.Cost != null)
+            {
+                var model = new BroadbandViewModel()
+                {
+                    Package = package.Name,
+                    Total = package.Cost
+                };
+
+                return model;
+            }
+
+            return null;
         }
     }
 }

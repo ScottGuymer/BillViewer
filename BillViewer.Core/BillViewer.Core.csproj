@@ -69,6 +69,7 @@
     <Compile Include="Models\View\BroadbandViewModel.cs" />
     <Compile Include="Models\View\OverviewViewModel.cs" />
     <Compile Include="Models\View\PhoneViewModel.cs" />
+    <Compile Include="Models\View\SubscriptionView.cs" />
     <Compile Include="Models\View\TVViewModel.cs" />
     <Compile Include="PackageType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Queries\Handlers\OverviewQueryHandler.cs" />
     <Compile Include="Queries\Handlers\PhoneQueryHandler.cs" />
     <Compile Include="Queries\Handlers\TVQueryHandler.cs" />
+    <Compile Include="UsefulExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

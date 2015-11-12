@@ -104,7 +104,9 @@
     <Compile Include="ControllerTests\HomeControllerTests.cs" />
     <Compile Include="QueryHandlerTests\BillQueryHandlerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryHandlerTests\BroadbandQueryHandlerTests.cs" />
     <Compile Include="QueryHandlerTests\PhoneQueryHandlerTests.cs" />
+    <Compile Include="QueryHandlerTests\TvQueryHandlerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

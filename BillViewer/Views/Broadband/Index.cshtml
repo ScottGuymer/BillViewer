@@ -1,9 +1,20 @@
 ﻿@model BillViewer.Core.Models.View.BroadbandViewModel
 
 @{
-    ViewBag.Title = "Broadband";
+    ViewBag.Title = "Sky Broadband";
 }
 
-<h2>Broadband</h2>
+<div class="mdl-card mdl-color--primary-contrast mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+    <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">@Model.Package</h2>
+    </div>
 
-Your current package
+    <div class="mdl-card__supporting-text">
+        This is your current Sky Broadband package. It cost you @Model.Total.ToString("C") this month.
+    </div>
+    <div class="mdl-card__actions">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            Go to my account
+        </button>
+    </div>
+</div>

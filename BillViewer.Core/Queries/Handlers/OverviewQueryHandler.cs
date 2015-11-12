@@ -1,5 +1,6 @@
 ﻿namespace BillViewer.Core.Queries.Handlers
 {
+    using System.Linq;
     using System.Threading.Tasks;
 
     using BillViewer.Core.Models.Bill;

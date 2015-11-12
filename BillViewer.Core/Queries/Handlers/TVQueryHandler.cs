@@ -22,12 +22,23 @@ namespace BillViewer.Core.Queries.Handlers
 
             var package = bill.PackageName(PackageType.tv);
 
+            decimal total = 0;
+            if (package != null)
+            {
+                total = package.Cost;
+            }
+
+            if (bill?.SkyStore?.Total != null)
+            {
+                total = total + bill.SkyStore.Total;
+            }
+
             var model = new TVViewModel()
             {
                 Package = package?.Name,
                 BuyAndKeep = bill.SkyStore.BuyAndKeep,
                 Rentals = bill.SkyStore.BuyAndKeep,
-                Total = bill.Total
+                Total = total
             };
 
             return model;

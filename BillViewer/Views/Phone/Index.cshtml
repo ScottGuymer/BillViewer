@@ -1,33 +1,51 @@
 ﻿@model BillViewer.Core.Models.View.PhoneViewModel
 
 @{
-    
+    ViewBag.Title = "Sky Talk";
 }
 
-<h2>Your Phone Package</h2>
+<div class="mdl-grid demo-content">
+    <div class="mdl-card mdl-color--primary-contrast mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">@Model.Package</h2>
+        </div>
 
-<h2>Cost</h2>
+        <div class="mdl-card__supporting-text">
+            This cost you a total of @Model.Total.ToString("C") this month including all call charges
+        </div>
+        <div class="mdl-card__actions">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Go to my account
+            </button>
+        </div>
+    </div>
 
-<h2>Calls</h2>
+    <div class="mdl-card demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+        <div class="mdl-card__title">
+            Your Call Charges
+        </div>
+        <div class="mdl-card__supporting-text mdl-grid">
+            <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--12-col mdl-shadow--2dp">
+                <thead>
+                    <tr>
+                        <th class="mdl-data-table__cell--non-numeric">Number</th>
+                        <th>Duration</th>
+                        <th>Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var call in Model.Calls)
+                    {
+                        <tr>
+                            <td class="mdl-data-table__cell--non-numeric">@call.Called</td>
+                            <td>@call.Duration</td>
+                            <td>@call.Cost.ToString("C")</td>
+                        </tr>
+                    }
 
-<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-    <thead>
-        <tr>
-            <th class="mdl-data-table__cell--non-numeric">Number</th>
-            <th>Duration</th>
-            <th>Cost</th>
-        </tr>
-    </thead>
-    <tbody>
-    @foreach (var call in Model.Calls)
-    {
-        <tr>
-            <td class="mdl-data-table__cell--non-numeric">@call.Called</td>
-            <td>@call.Duration</td>
-            <td>@call.Cost.ToString("C")</td>
-        </tr>
-    }
-    
-   
-    </tbody>
-</table>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

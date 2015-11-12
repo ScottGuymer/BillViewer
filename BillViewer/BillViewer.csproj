@@ -202,9 +202,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Plumbing\ControllerInstaller.cs" />
     <Compile Include="Plumbing\QueryHandlerInstaller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -216,16 +213,14 @@
     <Content Include="Content\mdl-v1.0.5\material.min.css" />
     <Content Include="Content\mdl-v1.0.5\material.min.js" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\mdl-v1.0.5\package.json" />
     <Content Include="Content\mdl-v1.0.5\material.min.js.map" />
     <Content Include="Content\mdl-v1.0.5\material.min.css.map" />
     <Content Include="Content\mdl-v1.0.5\LICENSE" />
     <Content Include="Content\mdl-v1.0.5\bower.json" />
+    <None Include="Properties\PublishProfiles\billviewer.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -260,11 +255,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,23 @@
+﻿@model BillViewer.Core.Models.View.TVViewModel
+
+@{
+    ViewBag.Title = "Tv";
+}
+
+<h2>Tv</h2>
+
+@Model.Package
+
+@Model.Total.ToString("C")
+
+@foreach (var rental in Model.Rentals)
+{
+    @rental.Title
+    @rental.Cost
+}
+
+@foreach (var buy in Model.BuyAndKeep)
+{
+    @buy.Title
+    @buy.Cost
+}

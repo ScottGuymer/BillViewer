@@ -1,0 +1,33 @@
+﻿@model BillViewer.Core.Models.View.PhoneViewModel
+
+@{
+    
+}
+
+<h2>Your Phone Package</h2>
+
+<h2>Cost</h2>
+
+<h2>Calls</h2>
+
+<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+    <thead>
+        <tr>
+            <th class="mdl-data-table__cell--non-numeric">Number</th>
+            <th>Duration</th>
+            <th>Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var call in Model.Calls)
+    {
+        <tr>
+            <td class="mdl-data-table__cell--non-numeric">@call.Called</td>
+            <td>@call.Duration</td>
+            <td>@call.Cost.ToString("C")</td>
+        </tr>
+    }
+    
+   
+    </tbody>
+</table>

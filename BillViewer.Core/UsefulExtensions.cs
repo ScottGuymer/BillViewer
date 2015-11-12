@@ -1,0 +1,14 @@
+﻿namespace BillViewer.Core
+{
+    using System.Linq;
+
+    using BillViewer.Core.Models.Bill;
+
+    public static class UsefulExtensions
+    {
+        public static Subscription PackageName(this Bill theBill, PackageType packageType)
+        {
+            return theBill?.Package.Subscriptions.FirstOrDefault(x => x.Type == packageType.ToString());
+        }
+    }
+}

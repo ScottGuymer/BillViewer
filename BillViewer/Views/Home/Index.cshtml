@@ -10,13 +10,17 @@
             <h2 class="mdl-card__title-text">Your Sky Statement</h2>
         </div>
         <div class="mdl-card__supporting-text mdl-grid mdl-cell--12-col">
+            <div class="mdl-grid mdl-cell--12-col">
+                <div class="mdl-cell mdl-cell--9-col">
+                    Payment for this statement is due on <b>@Model.PaymentDate.ToLongDateString()</b>
+                </div>
+                <div class="mdl-cell mdl-cell--3-col">
+                    <h1>@Model.Total.ToString("C")</h1>
+                    <small>@Model.FromDate.ToLongDateString() to @Model.ToDate.ToLongDateString()</small>
+                </div>
+            </div>
+           
 
-            <div class="mdl-cell mdl-cell--9-col">
-                Payment for this statement is due on @Model.PaymentDate.ToLongDateString()
-            </div>
-            <div class="mdl-cell mdl-cell--3-col">
-                <h1>@Model.Total.ToString("C")</h1>
-            </div>
 
         </div>
     </div>
@@ -37,7 +41,7 @@
                         <h3> @package.TotalCost.ToString("C")</h3>
                     </div>
                     <div class="mdl-card__media">
-                        
+
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
                         <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">
@@ -46,6 +50,9 @@
                     </div>
                 </div>
             }
-            </div>
         </div>
+        <div class="mdl-grid mdl-cell--12-col">
+            <small>This statement was generated on @Model.GeneratedDate.ToLongDateString()</small>
+        </div>
+    </div>
 </div>

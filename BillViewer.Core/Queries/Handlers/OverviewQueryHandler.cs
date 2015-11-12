@@ -23,7 +23,10 @@
             var overview = new OverviewViewModel
             {
                 PaymentDate = bill.Statement.Due,
-                Packages = bill.Package.Subscriptions.Select(x => Selector(x, bill)),
+                GeneratedDate = bill.Statement.Generated,
+                FromDate = bill.Statement?.Period?.From ?? DateTime.MinValue,
+                ToDate = bill.Statement?.Period?.To ?? DateTime.MinValue,
+                Packages = bill.Package.Subscriptions.Select(x => this.Selector(x, bill)),
                 Total = bill.Total
             };
 
@@ -35,7 +38,7 @@
             var subViewModel = new SubscriptionViewModel()
             {
                 Name = subscription.Name,
-                Type = (PackageType)Enum.Parse(typeof(PackageType), subscription.Type),
+                Type = subscription.Type.Parse<PackageType>(),
                 Cost = subscription.Cost
             };
 
